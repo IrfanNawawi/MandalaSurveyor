@@ -1,0 +1,49 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:typeface">serif</item>
+        <item name="bottomSheetDialogTheme">@style/AppBottomSheetDialogTheme</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppBottomSheetDialogTheme" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/AppModalStyle</item>
+    </style>
+
+    <style name="AppModalStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/bg_bottom_open</item>
+    </style>
+
+    <style name="SplashTheme" parent="@android:style/Theme.Holo.NoActionBar.Fullscreen">
+        <item name="colorPrimaryDark">@color/white</item>
+        <item name="android:windowBackground">@drawable/bg_splash</item>
+    </style>
+
+    <style name="EditFormTheme">
+        <item name="colorControlNormal">@color/grey</item>
+        <item name="colorControlActivated">@color/grey</item>
+        <item name="android:textColorHint">@color/grey</item>
+    </style>
+
+    <style name="EditTextTheme">
+        <item name="colorControlNormal">@color/defaultText</item>
+        <item name="colorControlActivated">@color/defaultText</item>
+        <item name="android:textColorHint">@color/defaultText</item>
+    </style>
+
+    <style name="EditPasswordTheme">
+        <item name="colorControlNormal">@color/defaultDarkText</item>
+        <item name="colorControlActivated">@color/defaultDarkText</item>
+        <item name="android:textColorHint">@color/grey</item>
+    </style>
+
+</resources>

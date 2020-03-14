@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.mandala.surveyor">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" /> <!-- Required to show current location -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /> <!-- PlacePicker also requires OpenGL ES version 2 -->
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
+    <application
+        android:name=".MyApp"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_app"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
+        tools:ignore="GoogleAppIndexingWarning">
+        <activity
+            android:name=".ui.activity.splash.SplashActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.activity.login.LoginActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name=".ui.activity.register.RegisterActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name=".ui.activity.main.MainActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name=".ui.activity.takstator.TakstatorActivity"
+            android:screenOrientation="portrait" /> <!-- NAV DRAWER -->
+        <activity
+            android:name=".ui.activity.setting.SettingActivity"
+            android:screenOrientation="portrait" /> <!-- BOTTOM MENU -->
+        <activity
+            android:name=".ui.activity.absen.AbsenActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.penugasan.PenugasanActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.performance.MyPerformanceActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.lacakaplikasi.LacakAplikasiActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.lacakaplikasi.LacakAplikasiDetail"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.kelengkapandata.KelengkapanDataActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.kelengkapandata.KelengkapanDataDetail"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.inbox.InboxActivity"
+            android:screenOrientation="portrait" /> <!-- DETAIL PAGE -->
+        <activity
+            android:name=".ui.activity.penugasan.DetailPenugasan"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.penugasan.DetailPenugasan2"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.klarifikasi.DetailKlarifikasiKonsumen"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.klarifikasi.DetailKlarifikasiCekLingkungan"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.klarifikasi.DetailKlarifikasiPekerjaan"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.klarifikasi.DetailKlarifikasiPenghasilan"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.klarifikasi.DetailKlarifikasiTempatTinggal"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.klarifikasi.DetailKlarifikasiPembiayaan"
+            android:screenOrientation="portrait" /> <!-- DOKUMEN PAGE -->
+        <activity
+            android:name=".ui.activity.dokumen.DokumenKonsumen"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.dokumen.DokumenTempatTinggal"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.dokumen.DokumenPenghasilan"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.dokumen.DokumenAgunan"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.dokumen.DokumenLainnya"
+            android:screenOrientation="portrait" /> <!-- TAKSASI PAGE -->
+        <activity
+            android:name=".ui.activity.klarifikasi.DetailTaksasi"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.taksasi.DetailTaksasiBody"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.taksasi.DetailTaksasiRangka"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.taksasi.DetailTaksasiMesin"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.taksasi.DetailTaksasiKelistrikan"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.taksasi.DetailTaksasiExterior"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.taksasi.DetailTaksasiKaroseri"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.takstator.DetailTakstator"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.taksasi.DetailTaksasiSparepart"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.taksasi.DetailTaksasiFoto"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.taksasi.DetailDataJaminan"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.signature.SignatureActivity"
+            android:screenOrientation="portrait" /> <!-- MENU ITEM -->
+        <activity
+            android:name=".ui.activity.history.HistoryAbsen"
+            android:screenOrientation="portrait" /> <!-- setting -->
+        <activity
+            android:name=".ui.activity.setting.Password"
+            android:screenOrientation="portrait" /> <!-- AUTH -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+    </application>
+
+</manifest>

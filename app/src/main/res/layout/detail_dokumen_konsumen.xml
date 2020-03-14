@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize"
+            android:background="@drawable/bg_toolbar"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/footer"
+        android:layout_below="@+id/appBar"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_kategori"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="kategori"
+                    android:textColor="@color/defaultDarkText"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:layout_marginRight="8dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:text="Foto KTP Pemohon"
+                            android:textColor="@color/defaultDarkText" />
+
+                        <RelativeLayout
+                            android:id="@+id/btn_ktp_pemohon"
+                            android:layout_width="match_parent"
+                            android:layout_height="160dp"
+                            android:clickable="true"
+                            android:foreground="?android:attr/selectableItemBackground">
+
+                            <ImageView
+                                android:id="@+id/img_ktp_pemohon"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:scaleType="centerCrop"
+                                android:visibility="gone" />
+
+                            <LinearLayout
+                                android:id="@+id/place_ktp_pemohon"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/bg_outline_thin"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="60dp"
+                                    android:layout_height="60dp"
+                                    android:src="@drawable/ic_camera" />
+                            </LinearLayout>
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:layout_marginLeft="8dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:text="Foto KTP Pasangan / Penjamin"
+                            android:textColor="@color/defaultDarkText" />
+
+                        <RelativeLayout
+                            android:id="@+id/btn_ktp_pasangan"
+                            android:layout_width="match_parent"
+                            android:layout_height="160dp"
+                            android:clickable="true"
+                            android:foreground="?android:attr/selectableItemBackground">
+
+                            <ImageView
+                                android:id="@+id/img_ktp_pasangan"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:scaleType="centerCrop"
+                                android:visibility="gone" />
+
+                            <LinearLayout
+                                android:id="@+id/place_ktp_pasangan"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/bg_outline_thin"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:tint="@color/white"
+                                    app:background="@drawable/bg_btn_blue"
+                                    app:fabSize="mini"
+                                    app:maxImageSize="24dp"
+                                    app:srcCompat="@drawable/ic_add" />
+                            </LinearLayout>
+                        </RelativeLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="16dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:layout_marginRight="8dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:text="Foto Kartu Keluarga"
+                            android:textColor="@color/defaultDarkText" />
+
+                        <RelativeLayout
+                            android:id="@+id/btn_kk"
+                            android:layout_width="match_parent"
+                            android:layout_height="160dp"
+                            android:clickable="true"
+                            android:foreground="?android:attr/selectableItemBackground">
+
+                            <ImageView
+                                android:id="@+id/img_kk"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:scaleType="centerCrop"
+                                android:visibility="gone" />
+
+                            <LinearLayout
+                                android:id="@+id/place_kk"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/bg_outline_thin"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="60dp"
+                                    android:layout_height="60dp"
+                                    android:src="@drawable/ic_camera" />
+                            </LinearLayout>
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:layout_marginLeft="8dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:text="Foto Surat Nikah/Cerai/Kematian (Optional)"
+                            android:textColor="@color/defaultDarkText" />
+
+                        <RelativeLayout
+                            android:id="@+id/btn_surat_optional"
+                            android:layout_width="match_parent"
+                            android:layout_height="160dp"
+                            android:clickable="true"
+                            android:foreground="?android:attr/selectableItemBackground">
+
+                            <ImageView
+                                android:id="@+id/img_surat_optional"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:scaleType="centerCrop"
+                                android:visibility="gone" />
+
+                            <LinearLayout
+                                android:id="@+id/place_surat_optional"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/bg_outline_thin"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:tint="@color/white"
+                                    app:background="@drawable/bg_btn_blue"
+                                    app:fabSize="mini"
+                                    app:maxImageSize="24dp"
+                                    app:srcCompat="@drawable/ic_add" />
+                            </LinearLayout>
+                        </RelativeLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/view_foto_npwp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:layout_marginRight="8dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:text="Foto NPWP"
+                            android:textColor="@color/defaultDarkText" />
+
+                        <RelativeLayout
+                            android:id="@+id/btn_npwp"
+                            android:layout_width="match_parent"
+                            android:layout_height="160dp"
+                            android:clickable="true"
+                            android:foreground="?android:attr/selectableItemBackground">
+
+                            <ImageView
+                                android:id="@+id/img_npwp"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:scaleType="centerCrop"
+                                android:visibility="gone" />
+
+                            <LinearLayout
+                                android:id="@+id/place_npwp"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/bg_outline_thin"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:tint="@color/white"
+                                    app:background="@drawable/bg_btn_blue"
+                                    app:fabSize="mini"
+                                    app:maxImageSize="24dp"
+                                    app:srcCompat="@drawable/ic_add" />
+                            </LinearLayout>
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_weight="1" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/view_foto_tabungan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:layout_marginRight="8dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:text="Foto Halaman Depan Buku Tabungan"
+                            android:textColor="@color/defaultDarkText" />
+
+                        <RelativeLayout
+                            android:id="@+id/btn_tabungan"
+                            android:layout_width="match_parent"
+                            android:layout_height="160dp"
+                            android:clickable="true"
+                            android:foreground="?android:attr/selectableItemBackground">
+
+                            <ImageView
+                                android:id="@+id/img_tabungan"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:scaleType="centerCrop"
+                                android:visibility="gone" />
+
+                            <LinearLayout
+                                android:id="@+id/place_tabungan"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/bg_outline_thin"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:tint="@color/white"
+                                    app:background="@drawable/bg_btn_blue"
+                                    app:fabSize="mini"
+                                    app:maxImageSize="24dp"
+                                    app:srcCompat="@drawable/ic_add" />
+                            </LinearLayout>
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_weight="1" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:id="@+id/footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:visibility="visible">
+
+        <Button
+            android:id="@+id/btn_save"
+            android:layout_width="0dip"
+            android:layout_height="?android:attr/actionBarSize"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:text="SIMPAN"
+            android:textColor="@color/defaultDarkText"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/btn_next"
+            android:layout_width="0dip"
+            android:layout_height="?android:attr/actionBarSize"
+            android:layout_weight="1"
+            android:background="@drawable/bg_toolbar"
+            android:text="SELANJUTNYA"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+    </LinearLayout>
+</RelativeLayout>

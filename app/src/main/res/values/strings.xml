@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Mobile Survey</string>
+
+    <string name="drawer_open">Open</string>
+    <string name="drawer_close">Close</string>
+
+    <string name="register">Untuk dapat mengakses aplikasi Mobile Survey silahkan untuk melakukan pendaftaran</string>
+
+    <!--MESSAGE ERROR-->
+    <string name="error_absen">Please take a picture to continue</string>
+    <string name="success_absen">Terima kasih Anda telah\n melakukan absen</string>
+
+    <string name="lorem_short">
+        Lorem ipsum dolor sit amet, non mollis, phasellus ac convallis id ornare maecenas,
+        facilisi fusce, et molestie dictum, omnis mollis etiam ligula.</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+</resources>

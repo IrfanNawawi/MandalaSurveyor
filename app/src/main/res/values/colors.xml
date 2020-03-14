@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#293092</color>
+    <color name="colorPrimaryDark">#4CA6FE</color>
+    <color name="colorPrimaryLight">#A7ECFE</color>
+    <color name="colorAccent">#177EF2</color>
+
+    <color name="defaultText">#DEEBF7</color>
+    <color name="defaultDarkText">#474747</color>
+    <color name="activeMenu">#293092</color>
+    <color name="deactiveMenu">#C4C4C4</color>
+
+    <color name="default_green">#24A211</color>
+    <color name="default_orange">#F58800</color>
+    <color name="default_red">#CB0C00</color>
+    <color name="default_yellow">#FDF205</color>
+
+    <color name="cyan">#00BCD4</color>
+    <color name="green">#4CAF50</color>
+    <color name="amber">#FFC107</color>
+    <color name="orange">#FF9800</color>
+    <color name="grey">#BEBEBE</color>
+    <color name="low_grey">#EEEEEE</color>
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+
+    <color name="transparent">#00000000</color>
+
+    <!--TRANSPARENT SCALE-->
+    <!--100% — FF-->
+    <!--90% — E6-->
+    <!--80% — CC-->
+    <!--70% — B3-->
+    <!--60% — 99-->
+    <!--50% — 80-->
+    <!--40% — 66-->
+    <!--30% — 4D-->
+    <!--20% — 33-->
+    <!--10% — 1A-->
+    <!--0% — 00-->
+</resources>

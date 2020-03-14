@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
+
+    <item
+        android:icon="@drawable/ic_more"
+        android:title=""
+        app:showAsAction="ifRoom">
+
+        <menu>
+            <item
+                android:id="@+id/action_route"
+                android:icon="@drawable/ic_map_pin"
+                android:orderInCategory="100"
+                android:title="Tampilkan Rute"
+                app:iconTint="@color/colorAccent"
+                app:showAsAction="never" />
+
+            <item
+                android:id="@+id/action_history"
+                android:icon="@drawable/ic_history"
+                android:orderInCategory="100"
+                android:title="History Tagging"
+                app:iconTint="@color/colorAccent"
+                app:showAsAction="never" />
+        </menu>
+    </item>
+</menu>

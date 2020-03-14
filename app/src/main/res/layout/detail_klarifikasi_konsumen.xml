@@ -1,0 +1,1480 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize"
+            android:background="@drawable/bg_toolbar"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/footer"
+        android:layout_below="@+id/appBar"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="8dp"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/tv_kategori"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:textColor="@color/defaultDarkText"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:visibility="gone"
+                    tools:text="Electronic" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="Nama Sales/Agent"
+                        android:textColor="@color/defaultDarkText"
+                        android:textSize="14sp" />
+
+                    <EditText
+                        android:id="@+id/input_name_sales"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:textColor="@color/defaultDarkText"
+                        android:textSize="14sp"
+                        android:theme="@style/EditFormTheme" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/view_tipe_agent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="Tipe Agent"
+                        android:textColor="@color/defaultDarkText"
+                        android:textSize="14sp" />
+
+                    <EditText
+                        android:id="@+id/input_type_agent"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:textColor="@color/defaultDarkText"
+                        android:textSize="14sp"
+                        android:theme="@style/EditFormTheme" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/view_sifat_usaha"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="Sifat Usaha"
+                        android:textColor="@color/defaultDarkText"
+                        android:textSize="14sp" />
+
+                    <EditText
+                        android:id="@+id/input_sifat_usaha"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:textColor="@color/defaultDarkText"
+                        android:textSize="14sp"
+                        android:theme="@style/EditFormTheme" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="Tipe Konsumen"
+                        android:textColor="@color/defaultDarkText"
+                        android:textSize="14sp" />
+
+                    <Spinner
+                        android:id="@+id/spinner_tipe_konsumen"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="-5dp"
+                        android:layout_marginTop="-4dp"
+                        android:layout_marginRight="-16dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="-10dp"
+                        android:layout_marginBottom="24dp"
+                        android:background="@color/grey" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/view_pekerjaan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="Pekerjaan"
+                        android:textColor="@color/defaultDarkText"
+                        android:textSize="14sp" />
+
+                    <Spinner
+                        android:id="@+id/spinner_pekerjaan"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="-5dp"
+                        android:layout_marginTop="-4dp"
+                        android:layout_marginRight="-16dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="-10dp"
+                        android:layout_marginBottom="24dp"
+                        android:background="@color/grey" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/view_tipe_perorangan_lembaga"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="Tipe Perorangan / Lembaga"
+                        android:textColor="@color/defaultDarkText"
+                        android:textSize="14sp" />
+
+                    <Spinner
+                        android:id="@+id/spinner_tipe_perorangan_lembaga"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="-5dp"
+                        android:layout_marginTop="-4dp"
+                        android:layout_marginRight="-16dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="-10dp"
+                        android:layout_marginBottom="24dp"
+                        android:background="@color/grey" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/view_jenis_badan_usaha"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="Jenis Badan Usaha"
+                        android:textColor="@color/defaultDarkText"
+                        android:textSize="14sp" />
+
+                    <Spinner
+                        android:id="@+id/spinner_jenis_badan_usaha"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="-5dp"
+                        android:layout_marginTop="-4dp"
+                        android:layout_marginRight="-16dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="-10dp"
+                        android:layout_marginBottom="24dp"
+                        android:background="@color/grey" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/view_nama_perusahaan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="Nama Perusahaan"
+                        android:textColor="@color/defaultDarkText"
+                        android:textSize="14sp" />
+
+                    <EditText
+                        android:id="@+id/input_nama_perusahaan"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:textColor="@color/defaultDarkText"
+                        android:textSize="14sp"
+                        android:theme="@style/EditFormTheme" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="Tanggal Pendirian"
+                        android:textColor="@color/defaultDarkText"
+                        android:textSize="14sp" />
+
+                    <EditText
+                        android:id="@+id/input_tanggal_pendirian"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:textColor="@color/defaultDarkText"
+                        android:textSize="14sp"
+                        android:theme="@style/EditFormTheme" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:text="Jenis Identitas"
+                            android:textColor="@color/defaultDarkText"
+                            android:textSize="14sp" />
+
+                        <Spinner
+                            android:id="@+id/spinner_jenis_identitas_company"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_marginLeft="-5dp"
+                            android:layout_marginTop="-4dp"
+                            android:layout_marginRight="-16dp" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginTop="-10dp"
+                            android:layout_marginBottom="24dp"
+                            android:background="@color/grey" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:text="No Identitas"
+                            android:textColor="@color/defaultDarkText"
+                            android:textSize="14sp" />
+
+                        <EditText
+                            android:id="@+id/input_no_identitas_company"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:textColor="@color/defaultDarkText"
+                            android:textSize="14sp"
+                            android:theme="@style/EditFormTheme" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:text="Nama NPWP"
+                            android:textColor="@color/defaultDarkText"
+                            android:textSize="14sp" />
+
+                        <EditText
+                            android:id="@+id/input_nama_npwp"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:textColor="@color/defaultDarkText"
+                            android:textSize="14sp"
+                            android:theme="@style/EditFormTheme" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:text="Jenis NPWP"
+                            android:textColor="@color/defaultDarkText"
+                            android:textSize="14sp" />
+
+                        <EditText
+                            android:id="@+id/input_jenis_npwp"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:textColor="@color/defaultDarkText"
+                            android:textSize="14sp"
+                            android:theme="@style/EditFormTheme" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:text="Alamat NPWP"
+                            android:textColor="@color/defaultDarkText"
+                            android:textSize="14sp" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginVertical="10dp"
+                            android:background="@drawable/bg_outline_white"
+                            android:padding="12dp">
+
+                            <EditText
+                                android:id="@+id/input_alamat_npwp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@color/white"
+                                android:gravity="top"
+                                android:lines="4"
+                                android:textColor="@color/defaultDarkText"
+                                android:textSize="14sp"
+                                android:theme="@style/EditTextTheme" />
+                        </RelativeLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="Nama Lengkap Konsumen"
+                        android:textColor="@color/defaultDarkText"
+                        android:textSize="14sp" />
+
+                    <EditText
+                        android:id="@+id/input_fullname_konsumen"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:textColor="@color/defaultDarkText"
+                        android:textSize="14sp"
+                        android:theme="@style/EditFormTheme" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="Nama Panggilan"
+                        android:textColor="@color/defaultDarkText"
+                        android:textSize="14sp" />
+
+                    <EditText
+                        android:id="@+id/input_nama_panggilan"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:textColor="@color/defaultDarkText"
+                        android:textSize="14sp"
+                        android:theme="@style/EditFormTheme" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="Jenis Kelamin"
+                        android:textColor="@color/defaultDarkText"
+                        android:textSize="14sp" />
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="16dp">
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="16dp"
+                            android:paddingLeft="8dp"
+                            android:text="Laki-laki"
+                            android:textSize="15sp" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="8dp"
+                            android:text="Perempuan"
+                            android:textSize="15sp" />
+                    </RadioGroup>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="Tempat / Tanggal Lahir"
+                        android:textColor="@color/defaultDarkText"
+                        android:textSize="14sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="8dp"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <EditText
+                                android:id="@+id/input_tempat_lahir"
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:textColor="@color/defaultDarkText"
+                                android:textSize="14sp"
+                                android:theme="@style/EditFormTheme" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <Spinner
+                                android:id="@+id/spinner_tanggal"
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_marginLeft="-5dp"
+                                android:layout_marginTop="-4dp"
+                                android:layout_marginRight="-16dp" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_marginTop="-10dp"
+                                android:layout_marginBottom="24dp"
+                                android:background="@color/grey" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="Usia"
+                        android:textColor="@color/defaultDarkText"
+                        android:textSize="14sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <EditText
+                                android:id="@+id/input_usia"
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:textColor="@color/defaultDarkText"
+                                android:textSize="14sp"
+                                android:theme="@style/EditFormTheme" />
+                        </LinearLayout>
+
+                        <Space
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="3dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="Alamat"
+                        android:textColor="@color/defaultDarkText"
+                        android:textSize="14sp" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="10dp"
+                        android:background="@drawable/bg_outline_white"
+                        android:padding="12dp">
+
+                        <EditText
+                            android:id="@+id/input_alamat"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            android:gravity="top"
+                            android:lines="4"
+                            android:textColor="@color/defaultDarkText"
+                            android:textSize="14sp"
+                            android:theme="@style/EditTextTheme" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.4"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:text="RT"
+                            android:textColor="@color/defaultDarkText"
+                            android:textSize="14sp" />
+
+                        <EditText
+                            android:id="@+id/input_rt"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:textColor="@color/defaultDarkText"
+                            android:textSize="14sp"
+                            android:theme="@style/EditFormTheme" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginHorizontal="4dp"
+                        android:layout_marginBottom="4dp"
+                        android:text=" / "
+                        android:textAlignment="center"
+                        android:textColor="@color/defaultDarkText"
+                        android:textSize="20sp" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.4"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:text="RW"
+                            android:textColor="@color/defaultDarkText"
+                            android:textSize="14sp" />
+
+                        <EditText
+                            android:id="@+id/input_rw"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:textColor="@color/defaultDarkText"
+                            android:textSize="14sp"
+                            android:theme="@style/EditFormTheme" />
+                    </LinearLayout>
+
+                    <Space
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.5" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:text="Kode Pos"
+                            android:textColor="@color/defaultDarkText"
+                            android:textSize="12sp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <EditText
+                                    android:id="@+id/input_kodepos"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="40dp"
+                                    android:textColor="@color/defaultDarkText"
+                                    android:textSize="14sp"
+                                    android:theme="@style/EditFormTheme" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="Provinsi"
+                        android:textColor="@color/defaultDarkText"
+                        android:textSize="14sp" />
+
+                    <Spinner
+                        android:id="@+id/spinner_provinsi"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="-5dp"
+                        android:layout_marginTop="-4dp"
+                        android:layout_marginRight="-16dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="-10dp"
+                        android:layout_marginBottom="24dp"
+                        android:background="@color/grey" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="Kota / Kabupaten"
+                        android:textColor="@color/defaultDarkText"
+                        android:textSize="14sp" />
+
+                    <Spinner
+                        android:id="@+id/spinner_kota"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="-5dp"
+                        android:layout_marginTop="-4dp"
+                        android:layout_marginRight="-16dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="-10dp"
+                        android:layout_marginBottom="24dp"
+                        android:background="@color/grey" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="Kecamatan"
+                        android:textColor="@color/defaultDarkText"
+                        android:textSize="14sp" />
+
+                    <Spinner
+                        android:id="@+id/spinner_kecamatan"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="-5dp"
+                        android:layout_marginTop="-4dp"
+                        android:layout_marginRight="-16dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="-10dp"
+                        android:layout_marginBottom="24dp"
+                        android:background="@color/grey" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="Kelurahan"
+                        android:textColor="@color/defaultDarkText"
+                        android:textSize="14sp" />
+
+                    <Spinner
+                        android:id="@+id/spinner_kelurahan"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="-5dp"
+                        android:layout_marginTop="-4dp"
+                        android:layout_marginRight="-16dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="-10dp"
+                        android:layout_marginBottom="24dp"
+                        android:background="@color/grey" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="No Handphone"
+                        android:textColor="@color/defaultDarkText"
+                        android:textSize="14sp" />
+
+                    <EditText
+                        android:id="@+id/input_no_hp"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:textColor="@color/defaultDarkText"
+                        android:textSize="14sp"
+                        android:theme="@style/EditFormTheme" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="No Whatsapp"
+                        android:textColor="@color/defaultDarkText"
+                        android:textSize="14sp" />
+
+                    <EditText
+                        android:id="@+id/input_no_wa"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:textColor="@color/defaultDarkText"
+                        android:textSize="14sp"
+                        android:theme="@style/EditFormTheme" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="Email"
+                        android:textColor="@color/defaultDarkText"
+                        android:textSize="14sp" />
+
+                    <EditText
+                        android:id="@+id/input_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:textColor="@color/defaultDarkText"
+                        android:textSize="14sp"
+                        android:theme="@style/EditFormTheme" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="Nama Gadis Ibu Kandung"
+                        android:textColor="@color/defaultDarkText"
+                        android:textSize="14sp" />
+
+                    <EditText
+                        android:id="@+id/input_gadis_ibu_kandung"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:textColor="@color/defaultDarkText"
+                        android:textSize="14sp"
+                        android:theme="@style/EditFormTheme" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="Pendidikan Terakhir"
+                        android:textColor="@color/defaultDarkText"
+                        android:textSize="14sp" />
+
+                    <Spinner
+                        android:id="@+id/spinner_pendidikan"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="-5dp"
+                        android:layout_marginTop="-4dp"
+                        android:layout_marginRight="-16dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="-10dp"
+                        android:layout_marginBottom="24dp"
+                        android:background="@color/grey" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:text="Status Perkawinan"
+                            android:textColor="@color/defaultDarkText"
+                            android:textSize="14sp" />
+
+                        <Spinner
+                            android:id="@+id/spinner_status_perkawinan"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_marginLeft="-5dp"
+                            android:layout_marginTop="-4dp"
+                            android:layout_marginRight="-16dp" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginTop="-10dp"
+                            android:layout_marginBottom="24dp"
+                            android:background="@color/grey" />
+                    </LinearLayout>
+
+                    <Space
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:text="Jumlah Tanggungan"
+                            android:textColor="@color/defaultDarkText"
+                            android:textSize="12sp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <Spinner
+                                    android:id="@+id/spinner_tanggungan"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="40dp"
+                                    android:layout_marginLeft="-5dp"
+                                    android:layout_marginTop="-4dp"
+                                    android:layout_marginRight="-16dp" />
+
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"
+                                    android:layout_marginTop="-10dp"
+                                    android:layout_marginBottom="24dp"
+                                    android:background="@color/grey" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.7"
+                                android:text="Orang"
+                                android:textColor="@color/defaultDarkText"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="Nama Pasangan"
+                        android:textColor="@color/defaultDarkText"
+                        android:textSize="14sp" />
+
+                    <EditText
+                        android:id="@+id/input_nama_pasangan"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:textColor="@color/defaultDarkText"
+                        android:textSize="14sp"
+                        android:theme="@style/EditFormTheme" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="Pekerjaan Pasangan"
+                        android:textColor="@color/defaultDarkText"
+                        android:textSize="14sp" />
+
+                    <Spinner
+                        android:id="@+id/spinner_pekerjaan_pasangan"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="-5dp"
+                        android:layout_marginTop="-4dp"
+                        android:layout_marginRight="-16dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="-10dp"
+                        android:layout_marginBottom="24dp"
+                        android:background="@color/grey" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="Nama Penjamin"
+                        android:textColor="@color/defaultDarkText"
+                        android:textSize="14sp" />
+
+                    <EditText
+                        android:id="@+id/input_nama_penjamin"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:textColor="@color/defaultDarkText"
+                        android:textSize="14sp"
+                        android:theme="@style/EditFormTheme" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="Jenis Identitas"
+                        android:textColor="@color/defaultDarkText"
+                        android:textSize="14sp" />
+
+                    <EditText
+                        android:id="@+id/input_jenis_identitas"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:textColor="@color/defaultDarkText"
+                        android:textSize="14sp"
+                        android:theme="@style/EditFormTheme" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="No Identitas"
+                        android:textColor="@color/defaultDarkText"
+                        android:textSize="14sp" />
+
+                    <EditText
+                        android:id="@+id/input_no_identitas"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:textColor="@color/defaultDarkText"
+                        android:textSize="14sp"
+                        android:theme="@style/EditFormTheme" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="Hubungan Penjamin Dengan Pemohon"
+                        android:textColor="@color/defaultDarkText"
+                        android:textSize="14sp" />
+
+                    <Spinner
+                        android:id="@+id/spinner_hubungan_penjaminPemohon"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="-5dp"
+                        android:layout_marginTop="-4dp"
+                        android:layout_marginRight="-16dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="-10dp"
+                        android:layout_marginBottom="24dp"
+                        android:background="@color/grey" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="Jenis Kelamin"
+                        android:textColor="@color/defaultDarkText"
+                        android:textSize="14sp" />
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="16dp">
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="16dp"
+                            android:paddingLeft="8dp"
+                            android:text="Laki-laki"
+                            android:textColor="@color/defaultDarkText"
+                            android:textSize="15sp" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="8dp"
+                            android:text="Perempuan"
+                            android:textColor="@color/defaultDarkText"
+                            android:textSize="15sp" />
+                    </RadioGroup>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="No Telepon"
+                        android:textColor="@color/defaultDarkText"
+                        android:textSize="14sp" />
+
+                    <EditText
+                        android:id="@+id/input_telp_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:textColor="@color/defaultDarkText"
+                        android:textSize="14sp"
+                        android:theme="@style/EditFormTheme" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="No Telepon"
+                        android:textColor="@color/defaultDarkText"
+                        android:textSize="14sp" />
+
+                    <EditText
+                        android:id="@+id/input_telp_2"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:textColor="@color/defaultDarkText"
+                        android:textSize="14sp"
+                        android:theme="@style/EditFormTheme" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="No Handphone"
+                        android:textColor="@color/defaultDarkText"
+                        android:textSize="14sp" />
+
+                    <EditText
+                        android:id="@+id/input_no_hp_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:textColor="@color/defaultDarkText"
+                        android:textSize="14sp"
+                        android:theme="@style/EditFormTheme" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="No Handphone"
+                        android:textColor="@color/defaultDarkText"
+                        android:textSize="14sp" />
+
+                    <EditText
+                        android:id="@+id/input_no_hp_2"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:textColor="@color/defaultDarkText"
+                        android:textSize="14sp"
+                        android:theme="@style/EditFormTheme" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="No Handphone"
+                        android:textColor="@color/defaultDarkText"
+                        android:textSize="14sp" />
+
+                    <EditText
+                        android:id="@+id/input_no_hp_penjamin"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:textColor="@color/defaultDarkText"
+                        android:textSize="14sp"
+                        android:theme="@style/EditFormTheme" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="Email"
+                        android:textColor="@color/defaultDarkText"
+                        android:textSize="14sp" />
+
+                    <EditText
+                        android:id="@+id/input_email_pic_perusahaan"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:textColor="@color/defaultDarkText"
+                        android:textSize="14sp"
+                        android:theme="@style/EditFormTheme" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="Nama PIC Perusahaan"
+                        android:textColor="@color/defaultDarkText"
+                        android:textSize="14sp" />
+
+                    <EditText
+                        android:id="@+id/input_pic_perusahaan"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:textColor="@color/defaultDarkText"
+                        android:textSize="14sp"
+                        android:theme="@style/EditFormTheme" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="Pekerjaan Penjamin"
+                        android:textColor="@color/defaultDarkText"
+                        android:textSize="14sp" />
+
+                    <Spinner
+                        android:id="@+id/spinner_pekerjaan_penjamin"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="-5dp"
+                        android:layout_marginTop="-4dp"
+                        android:layout_marginRight="-16dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="-10dp"
+                        android:layout_marginBottom="24dp"
+                        android:background="@color/grey" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:id="@+id/footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:visibility="visible">
+
+        <Button
+            android:id="@+id/btn_save"
+            android:layout_width="0dip"
+            android:layout_height="?android:attr/actionBarSize"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:text="SIMPAN"
+            android:textColor="@color/defaultDarkText"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/btn_next"
+            android:layout_width="0dip"
+            android:layout_height="?android:attr/actionBarSize"
+            android:layout_weight="1"
+            android:background="@drawable/bg_toolbar"
+            android:text="SELANJUTNYA"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+    </LinearLayout>
+</RelativeLayout>
