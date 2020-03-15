@@ -14,6 +14,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.mandala.surveyor.R;
+import com.mandala.surveyor.data.db.models.Penugasan;
 import com.mandala.surveyor.data.db.models.SurveyData;
 import com.mandala.surveyor.ui.activity.penugasan.DetailPenugasan;
 
@@ -26,10 +27,10 @@ import butterknife.ButterKnife;
 
 public class AdapterSurvey extends RecyclerView.Adapter<AdapterSurvey.MenuViewHolder> {
 
-    private List<SurveyData> menuList;
+    private List<Penugasan> menuList;
     private Context context;
 
-    public AdapterSurvey(List<SurveyData> menuList, Context context) {
+    public AdapterSurvey(List<Penugasan> menuList, Context context) {
         this.menuList = menuList;
         this.context = context;
     }
@@ -43,23 +44,23 @@ public class AdapterSurvey extends RecyclerView.Adapter<AdapterSurvey.MenuViewHo
 
     @Override
     public void onBindViewHolder(MenuViewHolder holder, int position) {
-        final SurveyData dataList = menuList.get(position);
-        int getStatus = dataList.getStatus();
+        final Penugasan dataList = menuList.get(position);
+//        int getStatus = dataList.getStatusSurvey();
 
-        holder.noAplikasi.setText(dataList.getAplikasi());
-        holder.nama.setText(dataList.getNama());
-        holder.kategori.setText(dataList.getKategori());
+        holder.noAplikasi.setText(dataList.getIdAplikasi());
+        holder.nama.setText(dataList.getNamaKonsumen());
+        holder.kategori.setText(dataList.getIdKategoriProduk());
         holder.alamat.setText(dataList.getAlamat());
 
-        if (getStatus == 0) {
-            holder.status.setText(dataList.getJarak());
-        } else {
+//        if (getStatus == 0) {
+//            holder.status.setText(dataList.getJarak());
+//        } else {
             holder.status.setText("Selesai");
             holder.status.setTextSize(20);
             holder.jarak.setVisibility(View.GONE);
             holder.btnBatal.setBackground(context.getDrawable(R.drawable.bg_btn_grey));
             holder.btnBatal.setEnabled(false);
-        }
+//        }
 
         holder.btnBatal.setTag(position);
         holder.btnBatal.setOnClickListener(new View.OnClickListener() {

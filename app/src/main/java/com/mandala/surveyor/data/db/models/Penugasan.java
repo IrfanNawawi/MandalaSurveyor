@@ -1,9 +1,11 @@
 package com.mandala.surveyor.data.db.models;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import com.google.gson.annotations.SerializedName;
 
-
-public class PenugasanSurvey{
+public class Penugasan implements Parcelable {
 
 	@SerializedName("idKonsumen")
 	private String idKonsumen;
@@ -20,20 +22,38 @@ public class PenugasanSurvey{
 	@SerializedName("idProvinsi")
 	private String idProvinsi;
 
+	@SerializedName("created_at")
+	private String createdAt;
+
 	@SerializedName("idJenisProduk")
 	private String idJenisProduk;
 
 	@SerializedName("idTipeBarang")
 	private String idTipeBarang;
 
+	@SerializedName("statusSurvey")
+	private Object statusSurvey;
+
+	@SerializedName("statusTaksasi")
+	private Object statusTaksasi;
+
 	@SerializedName("tglPenugasan")
 	private String tglPenugasan;
+
+	@SerializedName("updated_at")
+	private String updatedAt;
 
 	@SerializedName("idAplikasi")
 	private String idAplikasi;
 
 	@SerializedName("model")
 	private String model;
+
+	@SerializedName("id")
+	private int id;
+
+	@SerializedName("tagLokasi")
+	private String tagLokasi;
 
 	@SerializedName("idKota")
 	private String idKota;
@@ -44,6 +64,9 @@ public class PenugasanSurvey{
 	@SerializedName("idKategoriProduk")
 	private String idKategoriProduk;
 
+	@SerializedName("batalSurvey")
+	private Object batalSurvey;
+
 	@SerializedName("idMerkBarang")
 	private String idMerkBarang;
 
@@ -52,6 +75,9 @@ public class PenugasanSurvey{
 
 	@SerializedName("idKecamatan")
 	private String idKecamatan;
+
+	@SerializedName("noHp2")
+	private String noHp2;
 
 	@SerializedName("noHp1")
 	private String noHp1;
@@ -64,9 +90,6 @@ public class PenugasanSurvey{
 
 	@SerializedName("idPortofolio")
 	private String idPortofolio;
-
-	@SerializedName("no_Hp2")
-	private String noHp2;
 
 	@SerializedName("idSurveyor")
 	private String idSurveyor;
@@ -85,6 +108,52 @@ public class PenugasanSurvey{
 
 	@SerializedName("idJenisAlamat")
 	private String idJenisAlamat;
+
+	protected Penugasan(Parcel in) {
+		idKonsumen = in.readString();
+		rt = in.readString();
+		rw = in.readString();
+		idSubProduk = in.readString();
+		idProvinsi = in.readString();
+		createdAt = in.readString();
+		idJenisProduk = in.readString();
+		idTipeBarang = in.readString();
+		tglPenugasan = in.readString();
+		updatedAt = in.readString();
+		idAplikasi = in.readString();
+		model = in.readString();
+		id = in.readInt();
+		tagLokasi = in.readString();
+		idKota = in.readString();
+		email = in.readString();
+		idKategoriProduk = in.readString();
+		idMerkBarang = in.readString();
+		tglAplikasi = in.readString();
+		idKecamatan = in.readString();
+		noHp2 = in.readString();
+		noHp1 = in.readString();
+		namaKonsumen = in.readString();
+		alamat = in.readString();
+		idPortofolio = in.readString();
+		idSurveyor = in.readString();
+		idKelurahan = in.readString();
+		idCabang = in.readString();
+		kodePos = in.readString();
+		noTelp = in.readString();
+		idJenisAlamat = in.readString();
+	}
+
+	public static final Creator<Penugasan> CREATOR = new Creator<Penugasan>() {
+		@Override
+		public Penugasan createFromParcel(Parcel in) {
+			return new Penugasan(in);
+		}
+
+		@Override
+		public Penugasan[] newArray(int size) {
+			return new Penugasan[size];
+		}
+	};
 
 	public void setIdKonsumen(String idKonsumen){
 		this.idKonsumen = idKonsumen;
@@ -126,6 +195,14 @@ public class PenugasanSurvey{
 		return idProvinsi;
 	}
 
+	public void setCreatedAt(String createdAt){
+		this.createdAt = createdAt;
+	}
+
+	public String getCreatedAt(){
+		return createdAt;
+	}
+
 	public void setIdJenisProduk(String idJenisProduk){
 		this.idJenisProduk = idJenisProduk;
 	}
@@ -142,12 +219,36 @@ public class PenugasanSurvey{
 		return idTipeBarang;
 	}
 
+	public void setStatusSurvey(Object statusSurvey){
+		this.statusSurvey = statusSurvey;
+	}
+
+	public Object getStatusSurvey(){
+		return statusSurvey;
+	}
+
+	public void setStatusTaksasi(Object statusTaksasi){
+		this.statusTaksasi = statusTaksasi;
+	}
+
+	public Object getStatusTaksasi(){
+		return statusTaksasi;
+	}
+
 	public void setTglPenugasan(String tglPenugasan){
 		this.tglPenugasan = tglPenugasan;
 	}
 
 	public String getTglPenugasan(){
 		return tglPenugasan;
+	}
+
+	public void setUpdatedAt(String updatedAt){
+		this.updatedAt = updatedAt;
+	}
+
+	public String getUpdatedAt(){
+		return updatedAt;
 	}
 
 	public void setIdAplikasi(String idAplikasi){
@@ -164,6 +265,22 @@ public class PenugasanSurvey{
 
 	public String getModel(){
 		return model;
+	}
+
+	public void setId(int id){
+		this.id = id;
+	}
+
+	public int getId(){
+		return id;
+	}
+
+	public void setTagLokasi(String tagLokasi){
+		this.tagLokasi = tagLokasi;
+	}
+
+	public String getTagLokasi(){
+		return tagLokasi;
 	}
 
 	public void setIdKota(String idKota){
@@ -190,6 +307,14 @@ public class PenugasanSurvey{
 		return idKategoriProduk;
 	}
 
+	public void setBatalSurvey(Object batalSurvey){
+		this.batalSurvey = batalSurvey;
+	}
+
+	public Object getBatalSurvey(){
+		return batalSurvey;
+	}
+
 	public void setIdMerkBarang(String idMerkBarang){
 		this.idMerkBarang = idMerkBarang;
 	}
@@ -212,6 +337,14 @@ public class PenugasanSurvey{
 
 	public String getIdKecamatan(){
 		return idKecamatan;
+	}
+
+	public void setNoHp2(String noHp2){
+		this.noHp2 = noHp2;
+	}
+
+	public String getNoHp2(){
+		return noHp2;
 	}
 
 	public void setNoHp1(String noHp1){
@@ -244,14 +377,6 @@ public class PenugasanSurvey{
 
 	public String getIdPortofolio(){
 		return idPortofolio;
-	}
-
-	public void setNoHp2(String noHp2){
-		this.noHp2 = noHp2;
-	}
-
-	public String getNoHp2(){
-		return noHp2;
 	}
 
 	public void setIdSurveyor(String idSurveyor){
@@ -305,28 +430,35 @@ public class PenugasanSurvey{
 	@Override
  	public String toString(){
 		return 
-			"PenugasanSurvey{" + 
+			"Penugasan{" + 
 			"idKonsumen = '" + idKonsumen + '\'' + 
 			",rt = '" + rt + '\'' + 
 			",rw = '" + rw + '\'' + 
 			",idSubProduk = '" + idSubProduk + '\'' + 
 			",idProvinsi = '" + idProvinsi + '\'' + 
+			",created_at = '" + createdAt + '\'' + 
 			",idJenisProduk = '" + idJenisProduk + '\'' + 
 			",idTipeBarang = '" + idTipeBarang + '\'' + 
+			",statusSurvey = '" + statusSurvey + '\'' + 
+			",statusTaksasi = '" + statusTaksasi + '\'' + 
 			",tglPenugasan = '" + tglPenugasan + '\'' + 
+			",updated_at = '" + updatedAt + '\'' + 
 			",idAplikasi = '" + idAplikasi + '\'' + 
 			",model = '" + model + '\'' + 
+			",id = '" + id + '\'' + 
+			",tagLokasi = '" + tagLokasi + '\'' + 
 			",idKota = '" + idKota + '\'' + 
 			",email = '" + email + '\'' + 
 			",idKategoriProduk = '" + idKategoriProduk + '\'' + 
+			",batalSurvey = '" + batalSurvey + '\'' + 
 			",idMerkBarang = '" + idMerkBarang + '\'' + 
 			",tglAplikasi = '" + tglAplikasi + '\'' + 
 			",idKecamatan = '" + idKecamatan + '\'' + 
+			",noHp2 = '" + noHp2 + '\'' + 
 			",noHp1 = '" + noHp1 + '\'' + 
 			",namaKonsumen = '" + namaKonsumen + '\'' + 
 			",alamat = '" + alamat + '\'' + 
 			",idPortofolio = '" + idPortofolio + '\'' + 
-			",no_Hp2 = '" + noHp2 + '\'' + 
 			",idSurveyor = '" + idSurveyor + '\'' + 
 			",idKelurahan = '" + idKelurahan + '\'' + 
 			",idCabang = '" + idCabang + '\'' + 
@@ -335,4 +467,44 @@ public class PenugasanSurvey{
 			",idJenisAlamat = '" + idJenisAlamat + '\'' + 
 			"}";
 		}
+
+	@Override
+	public int describeContents() {
+		return 0;
+	}
+
+	@Override
+	public void writeToParcel(Parcel dest, int flags) {
+		dest.writeString(idKonsumen);
+		dest.writeString(rt);
+		dest.writeString(rw);
+		dest.writeString(idSubProduk);
+		dest.writeString(idProvinsi);
+		dest.writeString(createdAt);
+		dest.writeString(idJenisProduk);
+		dest.writeString(idTipeBarang);
+		dest.writeString(tglPenugasan);
+		dest.writeString(updatedAt);
+		dest.writeString(idAplikasi);
+		dest.writeString(model);
+		dest.writeInt(id);
+		dest.writeString(tagLokasi);
+		dest.writeString(idKota);
+		dest.writeString(email);
+		dest.writeString(idKategoriProduk);
+		dest.writeString(idMerkBarang);
+		dest.writeString(tglAplikasi);
+		dest.writeString(idKecamatan);
+		dest.writeString(noHp2);
+		dest.writeString(noHp1);
+		dest.writeString(namaKonsumen);
+		dest.writeString(alamat);
+		dest.writeString(idPortofolio);
+		dest.writeString(idSurveyor);
+		dest.writeString(idKelurahan);
+		dest.writeString(idCabang);
+		dest.writeString(kodePos);
+		dest.writeString(noTelp);
+		dest.writeString(idJenisAlamat);
+	}
 }
